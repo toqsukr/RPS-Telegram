@@ -5,14 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.springboot.db.entities.Artist;
-import com.example.springboot.db.services.EntityService;
+import com.example.springboot.db.services.ArtistService;
 
 @Controller
 public class SomeController {
-    private final EntityService<Artist, String> artistService;
+    private final ArtistService artistService;
 
     @Autowired
-    public SomeController(EntityService<Artist, String> _artistService) {
+    public SomeController(ArtistService _artistService) {
         artistService = _artistService;
     }
 

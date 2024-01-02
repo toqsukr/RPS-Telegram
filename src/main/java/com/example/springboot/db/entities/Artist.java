@@ -3,11 +3,10 @@ package com.example.springboot.db.entities;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
 @Document(collection = "artist")
 public class Artist {
-  @Id 
-  private Integer artistID;
+  @Id
+  private String artistID;
   private String name;
   private String surname;
 
@@ -16,7 +15,7 @@ public class Artist {
     surname = _surname;
   };
 
-  public Integer getAritstID() {
+  public String getAritstID() {
     return artistID;
   }
 
