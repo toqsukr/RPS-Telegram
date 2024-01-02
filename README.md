@@ -1,24 +1,35 @@
-# Read Me First
+# RPS-Telegram
 
-The following was discovered as part of building this project:
+Это приложение использует Spring Boot для создания системы рекомендации картин на основе жанров и предпочтений пользователей. Оно позволяет пользователям получать персонализированные рекомендации и осуществлять глобальный поиск по коллекции картин для корректировки рекомендаций.
 
-- The original package name 'com.example.spring-boot' is invalid and this project uses 'com.example.springboot' instead.
+## Функциональности
 
-# Getting Started
+- **Рекомендации на основе жанров:** Пользователи могут получать рекомендации картин на основе предварительной калибровки по жанрам. Система анализирует предпочтения пользователя и рекомендует соответствующие картины.
+- **Добавление в коллекцию:** Пользователи могут добавлять картины в свою коллекцию, что позволяет системе улучшать рекомендации на основе дальнейших предпочтений.
 
-### Reference Documentation
+- **Глобальный поиск:** Доступен глобальный поиск по коллекции картин, который позволяет пользователям искать конкретные картины и корректировать рекомендации.
 
-For further reference, please consider the following sections:
+## Использование
 
-- [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-- [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.2.1/maven-plugin/reference/html/)
-- [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.2.1/maven-plugin/reference/html/#build-image)
-- [Spring Web](https://docs.spring.io/spring-boot/docs/3.2.1/reference/htmlsingle/index.html#web)
+1. **Калибровка по жанрам:**
 
-### Guides
+   - Пользователи могут начать с калибровки по жанрам, указав свои предпочтения в определенных жанрах живописи.
 
-The following guides illustrate how to use some features concretely:
+2. **Добавление в коллекцию:**
 
-- [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-- [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-- [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+   - После калибровки пользователи могут добавлять понравившиеся картины в свою коллекцию, улучшая тем самым рекомендации.
+
+3. **Глобальный поиск:**
+   - Поиск позволяет пользователям искать картины по различным критериям, что влияет на рекомендации в будущем.
+
+## Технологии
+
+Это приложение разработано на Spring Boot и использует базу данных Neo4j для хранения информации о коллекции картин и предпочтениях пользователей.
+
+## Дополнительные настройки
+
+- Для подключения к базе данных Neo4j или другим сервисам, необходимо внести соответствующие настройки в файл `application.properties` или `application.yml`.
+
+## Вклад и разработка
+
+Если вы хотите внести свой вклад или улучшить это приложение, не стесняйтесь создавать запросы на слияние (pull requests) или открывать новые задачи (issues).
