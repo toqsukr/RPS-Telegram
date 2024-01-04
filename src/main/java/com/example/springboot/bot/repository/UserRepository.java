@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.DataAccessException;
+import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.example.springboot.bot.dto.User;
+import com.example.springboot.bot.exceptions.DbException;
 import com.example.springboot.utils.UserMapper;
 
 import lombok.extern.slf4j.Slf4j;
