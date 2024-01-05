@@ -2,6 +2,7 @@ package com.example.painting.bot;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
 import org.telegram.abilitybots.api.bot.AbilityBot;
 import org.telegram.abilitybots.api.objects.Ability;
 import org.telegram.abilitybots.api.objects.Locality;
@@ -9,12 +10,13 @@ import org.telegram.abilitybots.api.objects.Privacy;
 
 import com.example.painting.utils.Constants;
 
+@Component("paintingBot")
 public class TelegramBot extends AbilityBot {
     private final ResponseHandler responseHandler;
 
     @Autowired
     public TelegramBot(Environment env) {
-        super(env.getProperty("botToken"), "paintingbot");
+        super(env.getProperty("paintingBot.token"), env.getProperty("paintingBot.name"));
         responseHandler = new ResponseHandler(silent, db);
     }
 

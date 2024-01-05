@@ -31,7 +31,6 @@ public class WebHookApp {
             log.error(e.getMessage());
         }
         SpringApplication.run(WebHookApp.class, args);
-
     }
 
     private static TelegramBotsApi createLongPollingTelegramBotsApi() throws TelegramApiException {
