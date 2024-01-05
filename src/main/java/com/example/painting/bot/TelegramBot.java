@@ -35,5 +35,4 @@ public class TelegramBot extends AbilityBot {
                 .action(ctx -> responseHandler.replyToStart(ctx.chatId()))
                 .build();
     }
-
 }
