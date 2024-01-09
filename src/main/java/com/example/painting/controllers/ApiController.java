@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.painting.bot.ImageHandler;
-import com.example.painting.dao.SendImageRequest;
+import com.example.painting.dao.SendImageResponse;
 
 @RestController
 @RequestMapping("/api")
@@ -23,8 +23,8 @@ public class ApiController {
     }
 
     @PostMapping("/image")
-    public ResponseEntity<String> handleSendImage(@RequestBody SendImageRequest request) {
-        imageHandler.replyImage(request.getUserID(), request.getImageURL());
+    public ResponseEntity<String> handleSendImage(@RequestBody SendImageResponse request) {
+        imageHandler.replyImage(request.getUserID(), request.getImageData());
         return ResponseEntity.ok("The image was send successful!");
     }
 }
