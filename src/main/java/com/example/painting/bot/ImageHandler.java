@@ -19,7 +19,7 @@ public class ImageHandler {
 
     public void replyImage(long chatId, ImageResponse image) {
         SendPhoto sendPhoto = new SendPhoto();
-        String description = image.getDescription() == null ? image.getDescription() : "Нет информации D:";
+        String description = image.getDescription() != null ? image.getDescription() : "Нет информации D:";
         String imageText = image.getTitle() + '\n' + "Художник:\t" + image.getAuthor().getFullName() + "\n\n"
                 + description;
         sendPhoto.setChatId(String.valueOf(chatId));
