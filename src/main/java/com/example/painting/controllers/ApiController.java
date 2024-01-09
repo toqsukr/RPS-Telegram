@@ -12,18 +12,17 @@ import com.example.painting.bot.ImageHandler;
 import com.example.painting.dao.SendImageRequest;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api")
 @Controller
-public class SomeController {
-
+public class ApiController {
     private final ImageHandler imageHandler;
 
     @Autowired
-    public SomeController(ImageHandler imageHandler) {
+    public ApiController(ImageHandler imageHandler) {
         this.imageHandler = imageHandler;
     }
 
-    @PostMapping("/api/image")
+    @PostMapping("/image")
     public ResponseEntity<String> handleSendImage(@RequestBody SendImageRequest request) {
         imageHandler.replyImage(request.getUserID(), request.getImageURL());
         return ResponseEntity.ok("The image was send successful!");
