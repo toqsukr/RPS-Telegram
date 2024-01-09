@@ -9,9 +9,9 @@
 		<relativePath/> 
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>painting-system</artifactId>
+	<artifactId>painting</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot</name>
+	<name>RPS-Telegram</name>
 	<packaging>jar</packaging>
 	<description>RecommendationPaintingSystem</description>
 	<properties>
@@ -87,30 +87,28 @@
 
 	<build>
 		<plugins>
-				<plugin>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-maven-plugin</artifactId>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+						<configuration>
+							<finalName>RPS-Telegram</finalName>
+							<mainClass>com.example.painting.WebHookApp</mainClass>
+						</configuration>
+						<executions>
+								<execution>
+										<goals>
+												<goal>repackage</goal>
+										</goals>
+								</execution>
+						</executions>
+					</plugin>
+					<plugin>    
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+								<source>1.8</source>
+								<target>1.8</target>
+						</configuration>
 				</plugin>
-				<plugin>    
-					<artifactId>maven-compiler-plugin</artifactId>
-					<configuration>
-							<source>1.8</source>
-							<target>1.8</target>
-					</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.2.0</version>
-				<configuration>
-					<finalName>RPS-Telegram</finalName>
-						<archive>
-								<manifest>
-										<mainClass>WebHookApp</mainClass>
-								</manifest>
-						</archive>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 </project>
